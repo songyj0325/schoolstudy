@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오늘의 공부 — 주제 검색 학습 노트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">공부하고 싶은 주제를 검색해보세요</p>
+      <h1 class="hero-title">오늘은 뭘<br><span class="highlight">배워볼까?</span></h1>
+      <form class="search-form" id="searchForm" autocomplete="off">
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="예: 현대국어 문법, PER, 사동표현, 가정법 …"
+        />
+        <button type="submit" class="search-btn" aria-label="검색">검색</button>
+      </form>
+      <p class="hero-hint" id="heroHint">전체 <span id="topicCount">0</span>개 주제 · 카테고리를 눌러 둘러볼 수도 있어요</p>
+    </div>
+  </header>
+
+  <nav class="category-rail" id="categoryRail" aria-label="카테고리"></nav>
+
+  <main class="main">
+    <section id="resultsSection">
+      <div class="results-header" id="resultsHeader" hidden>
+        <h2 id="resultsTitle"></h2>
+        <button class="clear-btn" id="clearBtn" type="button">전체 보기</button>
+      </div>
+      <div class="topic-grid" id="topicGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>
+        아직 준비되지 않은 주제예요. 다른 검색어로 시도해보거나, 카테고리에서 비슷한 주제를 찾아보세요.
+      </p>
+    </section>
+  </main>
+
+  <div class="detail-overlay" id="detailOverlay" hidden>
+    <div class="detail-card" role="dialog" aria-modal="true">
+      <button class="detail-close" id="detailClose" aria-label="닫기">닫기 ✕</button>
+      <p class="detail-tag" id="detailTag"></p>
+      <h2 class="detail-title" id="detailTitle"></h2>
+      <p class="detail-summary" id="detailSummary"></p>
+      <div class="detail-body" id="detailBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>내가 쓰려고 만든 학습 노트 사이트 · 계속 주제를 추가하는 중이에요</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
