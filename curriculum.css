@@ -1,0 +1,110 @@
+.page-header {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px 20px;
+  text-align: center;
+}
+
+.page-title {
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 38px);
+  margin: 6px 0 12px;
+}
+
+.page-sub {
+  color: var(--ink-soft);
+  font-size: 14.5px;
+  margin: 0;
+}
+
+.curriculum-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 12px 24px 80px;
+}
+
+.subject-block {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.subject-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--sans);
+}
+
+.subject-toggle .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.subject-toggle .subject-name {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 700;
+  flex: 1;
+}
+
+.subject-toggle .subject-count {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+.subject-toggle .chevron {
+  transition: transform 0.15s ease;
+  color: var(--ink-soft);
+  flex: none;
+}
+
+.subject-block.open .chevron {
+  transform: rotate(180deg);
+}
+
+.subject-topics {
+  display: none;
+  padding: 0 20px 18px;
+  border-top: 1px dashed var(--line);
+}
+
+.subject-block.open .subject-topics {
+  display: block;
+  padding-top: 14px;
+}
+
+.topic-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topic-chip-link {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--paper-alt);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: background 0.12s ease, transform 0.12s ease;
+}
+
+.topic-chip-link:hover {
+  background: var(--accent-soft);
+  transform: translateY(-1px);
+}

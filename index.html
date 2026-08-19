@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>schoolstudy — 파일함</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="vault.css">
+</head>
+<body>
+
+  <div id="siteNav"></div>
+
+  <header class="page-header">
+    <p class="eyebrow">폴더별로 정리하고, 열어서 보고, 필기하는 공간</p>
+    <h1 class="page-title">파일함</h1>
+    <p class="page-sub" id="vaultHint">지금은 이 브라우저에만 저장돼요. 기기 간 동기화는 다음 단계예요.</p>
+  </header>
+
+  <main class="vault-main">
+    <div class="vault-toolbar">
+      <div class="folder-rail" id="folderRail"></div>
+      <div class="vault-actions">
+        <button type="button" class="vault-btn" id="newFolderBtn">+ 폴더</button>
+        <label class="vault-btn vault-btn-primary" for="fileInput">+ 파일 올리기</label>
+        <input type="file" id="fileInput" accept="image/*,application/pdf" multiple hidden />
+      </div>
+    </div>
+
+    <div class="file-grid" id="fileGrid"></div>
+    <p class="empty-state" id="vaultEmpty" hidden>이 폴더에는 아직 파일이 없어요. "+ 파일 올리기"로 추가해보세요.</p>
+  </main>
+
+  <div class="viewer-overlay" id="viewerOverlay" hidden>
+    <div class="viewer-card">
+      <div class="viewer-topbar">
+        <span class="viewer-filename" id="viewerFilename"></span>
+        <div class="viewer-tools">
+          <button type="button" class="viewer-tool-btn" id="penToggleBtn">✏️ 필기</button>
+          <button type="button" class="viewer-tool-btn" id="clearNoteBtn">지우기</button>
+          <button type="button" class="viewer-tool-btn" id="viewerCloseBtn">닫기 ✕</button>
+        </div>
+      </div>
+      <div class="viewer-canvas-wrap" id="viewerCanvasWrap">
+        <img id="viewerImage" hidden />
+        <embed id="viewerPdf" type="application/pdf" hidden />
+        <canvas id="viewerCanvas"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="nav.js"></script>
+  <script src="vault.js"></script>
+</body>
+</html>
